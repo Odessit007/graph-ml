@@ -1,12 +1,16 @@
-[Headers](#Introduction)
+* [Introduction](#intro)
+* [Mathematical definitions](#math)
+  * [Density of a simple graph](#density)
+  * [Adjacency matrix](#adjacency)
+* [Neighbors and degrees](#neighbors)
+* [Paths and cycles](#paths_and_cycles)
+  * [Connectivity and Acyclicity](#connectivity_and_acyclicity)
+  * [Reachability](#reachability)
+  * [DAGs](#dags)
 
-[Mathematical definitions](#Mathematical definitions)
-
-[Neighbors and degrees](#Neighbors and degrees)
-[Paths and cycles](#Paths and cycles)
 
 
-<a name="introduction"/>
+<a name="intro"/></a>
 # Introduction
 **Graph** is a data structure consisting of **nodes**, **edges** that connect nodes, and potentially additional data attached to nodes and/or edges.
 
@@ -44,6 +48,8 @@ Main graph types:
 Here I consider only *finite* graphs.
 
 
+
+<a name="math"/></a>
 # Mathematical definitions
 
 A **simple undirected graph** is a pair $(V, E)$ where
@@ -64,7 +70,10 @@ The **order** of a graph is the number of its vertices $|V|$.
 The **size** of a graph is the number of its edges $E$.
 
 
+
+<a name="density"></a>
 ### Density of a simple graph
+
 **Graph density** of a simple undirected graph without loops is the ratio between the number of edges it actually has and the number of edges it *can* have:
 $$D(G) = \frac{|E|}{\frac{|V| * (|V| - 1)}{2}} = \frac{2 |E|}{|V| (|V| - 1)}$$
 
@@ -78,6 +87,8 @@ For a simple directed graph that can have loops,
 $$D(G) = \frac{|E|}{|V|^2}$$
 
 
+
+<a name="adjacency"></a>
 ### Adjacency matrix
 
 Two nodes $v'$ and $v''$ are called **adjacent** if there is an edge from $v'$ to $v''$.
@@ -108,6 +119,8 @@ The adjacency matrices of undirected graphs are always symmetric.
 The adjacency matrices of simple graphs always have zeros on the main diagonal.
 
 
+
+<a name="neighbors"></a>
 # Neighbors and degrees
 
 **Neighbors** of node $v$ are nodes that have an edge to or from $v$.
@@ -125,6 +138,8 @@ In directed graph there are two notions of degree:
 All three degree definitions above are applicable for simple graphs and for multigraphs as well.
 
 
+
+<a name="paths_and_cycles"></a>
 # Paths and cycles
 A **path** is any sequence $v_0, e_1, v_1, ..., e_n, v_n$ where $v_i$ are nodes, $e_i$ are edges 
 and each edge $e_i$ goes from $v_{i-1}$ to $v_i$.
@@ -144,6 +159,7 @@ A **simple path** is a path that visits each node at most once
 A **cycle** is a path in which the start and end nodes are the same.
 
 
+<a name="connectivity_and_acyclicity"></a>
 ## Connectivity and acyclicity
 An undirected graph is called
 * **connected** if there's a path between any pair of nodes
@@ -162,6 +178,7 @@ for every pair of nodes $a$, $b$
 * * **acyclic** if there are no cycles in it
 
 
+<a name="reachability"></a>
 ## Reachability
 Node $b$ is said to be **reachable** from node $a$ if there is a path from $a$ to $b$.
 * every node is reachable from itself via an empty path, so reachability is a reflexive relation
@@ -171,6 +188,7 @@ thus reachability is a transitive relation
 it's an equivalence relation. Equivalence classes are called **connected components**.
 
 
+<a name="dags"></a>
 ## DAGs
 **DAG** is a Directed Acyclic Graph.
 
