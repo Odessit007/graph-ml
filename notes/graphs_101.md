@@ -61,13 +61,15 @@ For **simple directed graph** $E$ contains of *ordered* pairs of vertices: $(a, 
     
 For **(un)directed multigraph** $E$ is a *multiset* instead of *set*, so the same pair can be present more than once.
 
-
 A **weighted graph** is a triple $(V, E, w)$ where $w: E \rightarrow \mathbb{R}$ is a function that assigns **weight** $w(e)$ to each edge $e \in E$.
-
 
 The **order** of a graph is the number of its vertices $|V|$.
 
 The **size** of a graph is the number of its edges $E$.
+
+A graph is called **k-partite** graph $(k \geq 2)$ if its nodes can be partitioned into $k$ sets $P_1, ..., P_k$ such that
+no edge connects nodes within the same set $P_i$. In other words, edges are allowed to *cross* the sets but are not allowed
+*inside* the sets. 2-partite graph is typically called **bipartite**.
 
 
 
@@ -86,6 +88,9 @@ $$D(G) = \frac{|E|}{|V| (|V| - 1)}$$
 For a simple directed graph that can have loops,
 $$D(G) = \frac{|E|}{|V|^2}$$
 
+An **empty** graph has no edges.
+
+A **complete** graph is a simple undirected graph that has an edge between any pair of nodes but no loops.
 
 
 <a name="adjacency"></a>
