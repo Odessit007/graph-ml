@@ -1,9 +1,12 @@
 [Headers](#Introduction)
+
 [Mathematical definitions](#Mathematical definitions)
+
 [Neighbors and degrees](#Neighbors and degrees)
 [Paths and cycles](#Paths and cycles)
 
 
+<a name="introduction"/>
 # Introduction
 **Graph** is a data structure consisting of **nodes**, **edges** that connect nodes, and potentially additional data attached to nodes and/or edges.
 
